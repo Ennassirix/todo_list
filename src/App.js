@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import InputTask from './components/InputTask';
+import TasksList from './components/TasksList';
+import './App.css'
+import {  useState } from 'react';
+import {taskContext} from './context/Context'
 function App() {
+  const [value, setValue] = useState('')
+  const [tasks, setTasks] = useState([])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <taskContext.Provider value={{value,setTasks,tasks,setValue}}>
+      <div className="container">
+        <h1>Tasks : </h1>
+        <InputTask />
+        <TasksList />
+      </div>
+    </taskContext.Provider>
+    
   );
 }
 
