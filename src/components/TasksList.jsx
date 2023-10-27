@@ -30,7 +30,9 @@ export default function TasksList() {
                             <input type="checkbox" className='mx-2' checked={task.completed} onChange={() => changeComplete(task.id)} />
                             <span>{task.title}</span>
                             <button className='btn btn-danger mx-2' onClick={() => deleteTask(task.id)}>Delete</button>
-                                <button className='btn-secondary btn' onClick={() => setActiveTaskId(task.id)}>Update</button>
+                            <button className='btn-secondary btn' onClick={() => setActiveTaskId(task.id)}
+                            style={{display:`${task.completed ? 'none' : 'inline-block'}` }}
+                            >Update</button>
                         </>
                     )}
                 </li>
