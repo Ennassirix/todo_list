@@ -7,9 +7,8 @@ import {taskContext} from './context/Context'
 function App() {
   const [value, setValue] = useState('')
   const [tasks, setTasks] = useState([])
-  
   return (
-    <taskContext.Provider value={{value,setTasks,tasks,setValue}}>
+    <taskContext.Provider value={{ value, setTasks, tasks, setValue  }}>
       <div className="container">
         <h1>Tasks : </h1>
         <InputTask />

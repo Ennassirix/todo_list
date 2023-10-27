@@ -4,7 +4,6 @@ import { taskContext } from '../context/Context'
 import uuid from 'react-uuid';
 
 export default function InputTask() {
-    
     const { value, setTasks, setValue } = useContext(taskContext)
     const addTasks = e => {
         e.preventDefault()
